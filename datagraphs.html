@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Data Graphs</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="images/favicon.png" rel="icon">
+  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="css/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <a href="election.html"><img src="images/logo.png" alt="" class="img-fluid"></a>
+
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="election.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="election.html#about">Eleksyon</a></li>
+          <li class="dropdown "><a href="election.html#team"><span>Kandidatos</span> <i
+                class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#pres">Presidents</a></li>
+              <li><a href="#vpres">Vice Presidents</a></li>
+              <li><a href="senators.html">Senators</a></li>
+              <li><a href="partylist.html">Party-List Groups</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto active" href="datagraphs.html">Datos</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+
+
+        <div class="carousel-item active" style="background-image: url('images/slide/logo2.png');">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              <h2 class="animate__animated animate__fadeInDown">2022 Philippine Elections Survey Monitor</h2>
+              <p class="animate__animated animate__fadeInUp">Ferdinand Marcos Jr. and Sara Duterte remain the
+                frontrunners in the presidential and vice presidential races, respectively, according to the latest
+                survey by OCTA Research.</p>
+              <a href="datagraphs.html" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <main id="main">
+
+
+    <!--==== PROFILES====-->
+
+    <section class="portfolio section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="section-title">
+          <h5 class="card-title">Presidential Poll</h5>
+
+          <!-- Line Chart -->
+          <div id="presidentialpoll"></div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              new ApexCharts(document.querySelector("#presidentialpoll"), {
+                series: [{
+                  name: '1. Ernesto "ERNIE" Abellar',
+                  data: [0.02, 0.05, 0, 0.1, 1,]
+                }, {
+                  name: '2. Leodegario "KA LEODY" De Guzman',
+                  data: [.004, 0.02, 0.1, 0.02, 0.01]
+                }, {
+                  name: '3. Francisco "ISKO MORENO" Domagoso',
+                  data: [8, 8, 10, 8, 9]
+                }, {
+                  name: '4. Norberto Gonzales',
+                  data: [0, 0, 0, 0, 0.001]
+                }, {
+                  name: '5. Panfilo "PING" Lacson',
+                  data: [6, 4, 4, 2, 4]
+                }, {
+                  name: '6. Faisal "FAI" Mangondato',
+                  data: [0, 0.3, 0.4, 1, 0.1]
+                }, {
+                  name: '7. Ferdinand "BONGBONG" Marcos Jr.',
+                  data: [53, 60, 60, 56, 57]
+                }, {
+                  name: '8. Jose "JOJOMON" Montemayor Jr.',
+                  data: [0, 0.1, 0.5, 0, 0]
+                }, {
+                  name: '9. Emmanuel "MANNY" Pacquiao',
+                  data: [8, 8, 8, 6, 7]
+                }, {
+                  name: '10. Maria Leonor "LENI" Robredo',
+                  data: [20, 16, 24, 24, 22]
+                }],
+                chart: {
+                  height: 350,
+                  type: 'area',
+                  toolbar: {
+                    show: false
+                  },
+                },
+                markers: {
+                  size: 4
+                },
+                colors: ['#5CA190',
+                  '#F26A5A',
+                  '#4076FF',
+                  '#C5650C',
+                  '#B77DDE',
+                  '#48A768',
+                  '#C02402',
+                  '#CAB926',
+                  '#39C6F0',
+                  '#FC6ADF'],
+                fill: {
+                  type: "gradient",
+                  gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.3,
+                    opacityTo: 0.4,
+                    stops: [0, 90, 100]
+                  }
+                },
+                dataLabels: {
+                  enabled: false
+                },
+                stroke: {
+                  curve: 'smooth',
+                  width: 2
+                },
+                xaxis: {
+                  type: 'datetime',
+                  categories: ["2021-12-06", "2022-01-24", "2022-02-23", "2022-03-21", "2022-04-06"]
+                },
+                tooltip: {
+                  x: {
+                    format: 'dd/MM/yy HH:mm'
+                  },
+                }
+              }).render();
+            });
+          </script>
+
+
+
+        </div>
+      </div>
+    </section>
+    <!-- End Line Chart -->
+
+    <section class="portfolio section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="section-title">
+          <h5 class="card-title"> Vice Presidential Poll</h5>
+
+          <!-- Line Chart -->
+          <div id="vicepresidentialpoll"></div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              new ApexCharts(document.querySelector("#vicepresidentialpoll"), {
+                series: [{
+                  name: '1. Jose "LITO" Atienza Jr.',
+                  data: [1, 1, 1, 1, 0.1,]
+                }, {
+                  name: '2. Walden "WALDEN" Bello',
+                  data: [.01, 0.02, 0.1, 0.1, 0.1]
+                }, {
+                  name: '3. Jose Rizalito "LITO" David',
+                  data: [0, 0.02, 0, 0, 0.02]
+                }, {
+                  name: '4. Sara "INDAY SARA" Duterte - Carpio',
+                  data: [45, 57, 53, 56, 57]
+                }, {
+                  name: '5. Emmanuel "MANNY" Lopez',
+                  data: [0.1, 0.1, 0, 0.3, 0.1]
+                }, {
+                  name: '6. Willie "DOC WILLIE" Ong',
+                  data: [6, 5, 6, 5, 7]
+                }, {
+                  name: '7. Francis Pancratius "KIKO" Pangilinan',
+                  data: [12, 11, 11, 15, 12]
+                }, {
+                  name: '8. Carlos "KUYA CHARLIE" Serapio',
+                  data: [0.1, 0.01, 0.01, 0.01, 0]
+                }, {
+                  name: '9. Vicente "TITO" Sotto III',
+                  data: [31, 29, 24, 20, 23]
+                }],
+                chart: {
+                  height: 350,
+                  type: 'area',
+                  toolbar: {
+                    show: false
+                  },
+                },
+                markers: {
+                  size: 4
+                },
+                colors: ['#39C6F0',
+                  '#F26A5A',
+                  '#CAB924',
+                  '#C02402',
+                  '#5A518D',
+                  '#4076FF',
+                  '#FC6ADF',
+                  '#48A768',
+                  '#B77DDE'],
+                fill: {
+                  type: "gradient",
+                  gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.3,
+                    opacityTo: 0.4,
+                    stops: [0, 90, 100]
+                  }
+                },
+                dataLabels: {
+                  enabled: false
+                },
+                stroke: {
+                  curve: 'smooth',
+                  width: 2
+                },
+                xaxis: {
+                  type: 'datetime',
+                  categories: ["2021-12-06", "2022-01-24", "2022-02-23", "2022-03-21", "2022-04-06"]
+                },
+                tooltip: {
+                  x: {
+                    format: 'dd/MM/yy HH:mm'
+                  },
+                }
+              }).render();
+            });
+          </script>
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+
+
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Top 5 Most Searched Presidential Candidates</h5>
+
+              <!-- Pie Chart -->
+              <div id="pieChart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new ApexCharts(document.querySelector("#pieChart"), {
+                    series: [10, 3, 25, 8, 54],
+                    chart: {
+                      height: 350,
+                      type: 'pie',
+                      toolbar: {
+                        show: true
+                      }
+                    },
+                    labels: ['Isko', 'Ping', 'BBM', 'Manny', 'Leni']
+                  }).render();
+                });
+              </script>
+              <!-- End Pie Chart -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Top 5 Most Searched Vice Presidential Candidates</h5>
+
+              <!-- Donut Chart -->
+              <div id="donutChart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new ApexCharts(document.querySelector("#donutChart"), {
+                    series: [47, 38, 12, 2, 1],
+                    chart: {
+                      height: 350,
+                      type: 'donut',
+                      toolbar: {
+                        show: true
+                      }
+                    },
+                    labels: ['Kiko ', 'Inday Sara', 'Tito Sotto', 'Walden', 'Lito'],
+                  }).render();
+                });
+              </script>
+              <!-- End Donut Chart -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main><!-- End #main -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Eleksyon 2022</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="election.html#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="election.html#about">Eleksyon</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="election.html#team">Kandidatos</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Data Graphs</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>i-Boto Mo</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://www.facebook.com/Crislhan">i-Boto Mo</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
